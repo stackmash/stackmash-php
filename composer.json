@@ -1,0 +1,29 @@
+{
+    "name": "stackmash/stackmash-php",
+    "description": "PHP implementation of the Stackmash API",
+    "version": "0.1.0",
+    "type": "library",
+    "homepage": "https://stackmash.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stackmash",
+            "email": "support@stackmash.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "php-coveralls/php-coveralls": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stackmash\\": "src/"
+        }
+    }
+}

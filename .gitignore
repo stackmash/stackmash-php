@@ -1,0 +1,10 @@
+/vendor/
+/.vscode/
+/.vagrant/
+
+.idea
+.phpunit.result.cache
+.DS_Store
+
+composer.lock
+clover.xml
