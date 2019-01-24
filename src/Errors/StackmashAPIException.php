@@ -4,7 +4,7 @@ namespace Stackmash\Errors;
 
 use Exception;
 
-class APIException extends Exception
+class StackmashAPIException extends Exception
 {
 	private $httpCode;
 
