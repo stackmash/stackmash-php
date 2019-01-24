@@ -21,7 +21,7 @@ Or, add to your composer.json file:
 ```json
 "require": {
     ...
-    "stackmash/stackmash-php": "^0.1.0"
+    "stackmash/stackmash-php": "^0.2.0"
     ...
 }
 ```
