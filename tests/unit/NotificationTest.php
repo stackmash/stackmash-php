@@ -22,7 +22,7 @@ class NotificationTest extends \PHPUnit\Framework\TestCase
 			"created_at": "created_at"
 		}';
 
-		$notification = new \Stackmash\Models\Notification(json_decode($notification));
+		$notification = new \Stackmash\Models\StackmashNotification(json_decode($notification));
 
 		$this->assertEquals($notification->project_id, 'project_id');
 		$this->assertEquals($notification->category_id, 'category_id');

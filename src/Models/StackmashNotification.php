@@ -3,11 +3,11 @@
 namespace Stackmash\Models;
 
 /**
- * Class Notification
+ * Class StackmashNotification
  *
  * @package Stackmash
  */
-class Notification
+class StackmashNotification
 {
 	public $id;
 

@@ -2,14 +2,14 @@
 
 namespace Stackmash;
 
-use Stackmash\Errors\APIException;
+use Stackmash\Errors\StackmashAPIException;
 
 /**
  * Class Response
  *
  * @package Stackmash
  */
-class Response
+class StackmashResponse
 {
 	private $raw;
 
@@ -22,7 +22,7 @@ class Response
 	private $config;
 
 	/**
-	 * @return Response Response instance
+	 * @return StackmashResponse Response instance
 	 */
 	public function __construct($ch)
 	{
@@ -69,23 +69,23 @@ class Response
 		switch($this->responseCode)
 		{
 			case 401:
-				throw new APIException($this->raw, 401, 'Unauthorized');
+				throw new StackmashAPIException($this->raw, 401, 'Unauthorized');
 				break;
 
 			case 403:
-				throw new APIException($this->raw, 403, 'Forbidden');
+				throw new StackmashAPIException($this->raw, 403, 'Forbidden');
 				break;
 
 			case 404:
-				throw new APIException($this->raw, 404, 'Not found');
+				throw new StackmashAPIException($this->raw, 404, 'Not found');
 				break;
 
 			case 422:
-				throw new APIException($this->raw, 422, 'Unprocessable entity');
+				throw new StackmashAPIException($this->raw, 422, 'Unprocessable entity');
 				break;
 
 			case 500:
-				throw new APIException($this->raw, 500, 'Server error');
+				throw new StackmashAPIException($this->raw, 500, 'Server error');
 				break;
 		}
 
@@ -94,16 +94,16 @@ class Response
 			case CURLE_COULDNT_CONNECT:
 			case CURLE_OPERATION_TIMEOUTED:
 			case CURLE_COULDNT_RESOLVE_HOST:
-				throw new APIException('{"message":"Connection error: ' . $this->errorMessage . '"}');
+				throw new StackmashAPIException('{"message":"Connection error: ' . $this->errorMessage . '"}');
 				break;
 
 			case CURLE_SSL_CACERT:
 			case CURLE_SSL_PEER_CERTIFICATE:
-				throw new APIException('{"message":"SSL error: ' . $this->errorMessage . '"}');
+				throw new StackmashAPIException('{"message":"SSL error: ' . $this->errorMessage . '"}');
 				break;
 
 			default:
-				throw new APIException('{"message":"Error, please contact support@stackmash.com: ' . $this->errorMessage . '"}');
+				throw new StackmashAPIException('{"message":"Error, please contact support@stackmash.com: ' . $this->errorMessage . '"}');
 		}
 	}
 

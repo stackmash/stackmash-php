@@ -2,21 +2,21 @@
 
 namespace Stackmash;
 
-use Stackmash\Response;
+use Stackmash\StackmashResponse;
 
 /**
  * Class Curl
  *
  * @package Stackmash
  */
-class Curl
+class StackmashCurl
 {
 	private $url = 'notification/create';
 
 	private $config;
 
 	/**
-	 * @return Curl Curl instance
+	 * @return StackmashCurl Curl instance
 	 */
 	public function __construct()
 	{
@@ -26,7 +26,7 @@ class Curl
 	/**
 	 * @param array $data The notification data
 	 *
-	 * @return Response Output response
+	 * @return StackmashResponse Output response
 	 */
 	public function post($data)
 	{
@@ -44,7 +44,7 @@ class Curl
 	/**
 	 * @param array $opts cURL options
 	 *
-	 * @return Response Output response
+	 * @return StackmashResponse Output response
 	 */
 	private function execute($opts)
 	{
@@ -54,7 +54,7 @@ class Curl
 		{
 			$ch = $this->initCurl($opts);
 
-			$response = new Response($ch);
+			$response = new StackmashResponse($ch);
 
 			curl_close($ch);
 

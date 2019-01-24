@@ -2,7 +2,7 @@
 
 namespace Stackmash;
 
-class Device
+class StackmashDevice
 {
 	private $browser = '';
 

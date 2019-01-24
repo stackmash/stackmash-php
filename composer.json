@@ -1,7 +1,7 @@
 {
     "name": "stackmash/stackmash-php",
     "description": "PHP implementation of the Stackmash API",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "type": "library",
     "homepage": "https://stackmash.com/",
     "license": "MIT",

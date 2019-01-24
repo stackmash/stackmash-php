@@ -2,12 +2,12 @@
 
 namespace Stackmash;
 
-use Stackmash\Curl;
-use Stackmash\Device;
-use Stackmash\Errors\APIException;
-use Stackmash\Models\Notification;
+use Stackmash\StackmashCurl;
+use Stackmash\StackmashDevice;
+use Stackmash\Errors\StackmashAPIException;
+use Stackmash\Models\StackmashNotification;
 
-class Project
+class StackmashProject
 {
 	private $publicKey;
 
@@ -21,8 +21,8 @@ class Project
 
 	public function __construct($publicKey, $privateKey, $config)
 	{
-		$this->curl = new Curl;
-		$this->device = new Device;
+		$this->curl = new StackmashCurl;
+		$this->device = new StackmashDevice;
 		$this->config = array_merge(require('config.php'), $config);
 
 		$this->publicKey = $publicKey;
@@ -34,7 +34,7 @@ class Project
 	 * @param string $title Title of the notification
 	 * @param array $body Body of the notification
 	 *
-	 * @return Notification The notification object
+	 * @return StackmashNotification The notification object
 	 */
 	public function action($category, $title, $body = [])
 	{
@@ -61,12 +61,12 @@ class Project
 
 		if(!$response->hasErrors())
 		{
-			return new Notification($response->toObject());
+			return new StackmashNotification($response->toObject());
 		} else {
 			try
 			{
 				$response->error();
-			} catch(APIException $e) {
+			} catch(StackmashAPIException $e) {
 				return $e->toObject();
 			}
 		}
