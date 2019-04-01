@@ -65,5 +65,5 @@ $project->action("category-id-name", "New user signed up", [
 
 ### Documentation
 
-<a href="https://stackmash.com/docs/examples#php" target="_blank">PHP documentation</a>
+<a href="https://stackmash.com/docs/installations#php" target="_blank">PHP documentation</a>
 For support, email <a href="mailto:support@stackmash.com">support@stackmash.com</a> or visit <a href="https://stackmash.com/support">https://stackmash.com/support</a>.
