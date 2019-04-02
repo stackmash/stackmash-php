@@ -1,9 +1,15 @@
 {
     "name": "stackmash/stackmash-php",
-    "description": "PHP implementation of the Stackmash API",
+    "description": "Stackmash for PHP",
+    "keywords": [
+        "stackmash",
+        "stackmash php",
+        "notification",
+        "notifications"
+    ],
     "version": "0.2.0",
     "type": "library",
-    "homepage": "https://stackmash.com/",
+    "homepage": "https://github.com/stackmash/stackmash-php",
     "license": "MIT",
     "authors": [
         {
