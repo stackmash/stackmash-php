@@ -53,6 +53,6 @@ class NotificationTest extends \PHPUnit\Framework\TestCase
 
 		$response = $project->action('tests', 'Test notification', ['Test body']);
 
-		$this->assertInstanceOf(\Stackmash\Models\StackmashNotification::class, $response);
+		$this->assertInstanceOf('\Stackmash\Models\StackmashNotification', $response);
 	}
 }
