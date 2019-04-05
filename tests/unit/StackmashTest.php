@@ -9,6 +9,6 @@ class StackmashTest extends \PHPUnit\Framework\TestCase
 	{
 		$project = \Stackmash\Stackmash::getProject('public_key', 'private_key', []);
 
-		$this->assertInstanceOf(\Stackmash\StackmashProject::class, $project);
+		$this->assertInstanceOf('\Stackmash\StackmashProject', $project);
 	}
 }
