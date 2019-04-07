@@ -57,7 +57,12 @@ class StackmashProject
 		if($this->config['showIp'])
 			$data['ip'] = $this->device->getIP();
 
-		$response = $this->curl->post($data);
+		try
+		{
+			$response = $this->curl->post($data);
+		} catch(Exception $e) {
+
+		}
 
 		if(!$response->hasErrors())
 		{
